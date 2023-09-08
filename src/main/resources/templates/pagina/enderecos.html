@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br"
+      xmlns:th="http://thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{template.html}"
+>
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+    <title>ENDERECOS</title>
+</head>
+<body>
+<div class="container" layout:fragment="conteudo">
+    <h1>ENDERECOS ENCONTRADOS</h1>
+    <form action="/" method="get">
+        <button type="submit" class="btn btn-primary">NOVA PESQUISA</button>
+    </form>
+    <table  class="table table-striped container">
+        <thead>
+            <tr>
+                <th scope="col">CEP</th>
+                <th scope="col">LOGRADOURO</th>
+                <th scope="col">BAIRRO</th>
+                <th scope="col">LOCALIDADE</th>
+                <th scope="col">UF</th>
+            </tr>
+        </thead>
+        <tbody>
+        <tr class="table-primary container" th:each="endereco : ${enderecos}">
+            <td  th:text="${endereco.cep}"></td>
+            <td  th:text="${endereco.logradouro}"></td>
+            <td  th:text="${endereco.bairro}"></td>
+            <td  th:text="${endereco.localidade}"></td>
+            <td  th:text="${endereco.uf}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

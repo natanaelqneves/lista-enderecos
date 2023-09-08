@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br"
+       xmlns:th="http://thymeleaf.org"
+       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+       layout:decorate="~{template.html}"
+>
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+    <title>ENDERECO</title>
+</head>
+<body>
+<div class="container-sm" layout:fragment="conteudo">
+    <h1>ENDERECO ENCONTRADO</h1>
+    <div class="row">
+        <form action="/" method="get">
+            <button type="submit" class="btn btn-primary">NOVA PESQUISA</button>
+        </form>
+        <form action="/enderecos" method="get">
+            <button type="submit" class="btn btn-primary">ULTIMAS PESQUISAS</button>
+        </form>
+    </div>
+    <ul class="list-group" th:each="endereco : ${endereco}">
+        <li class="list-group-item">
+            CEP: <span th:text="${endereco.cep}"></span>
+        </li>
+        <li class="list-group-item">
+            LOGRADOURO: <span th:text="${endereco.logradouro}"></span>
+        </li>
+        <li class="list-group-item">
+            COMPLEMTENTO: <span th:text="${endereco.complemento}"></span>
+        </li>
+        <li class="list-group-item">
+            BAIRRO: <span th:text="${endereco.bairro}"></span>
+        </li>
+        <li class="list-group-item">
+            LOCALIDADE: <span th:text="${endereco.localidade}"></span>
+        </li>
+        <li class="list-group-item">
+            UF: <span th:text="${endereco.uf}"></span>
+        </li>
+        <li class="list-group-item">
+            IBGE: <span th:text="${endereco.ibge}"></span>
+        </li>
+        <li class="list-group-item">
+            GIA: <span th:text="${endereco.gia}"></span>
+        </li>
+        <li class="list-group-item">
+            DDD: <span th:text="${endereco.ddd}"></span>
+        </li>
+        <li class="list-group-item">
+            SIAFI: <span th:text="${endereco.siafi}"></span>
+        </li>
+    </ul>
+</div>
+</body>
+</html>
