@@ -18,7 +18,7 @@ public class EnderecoController {
     private List<Endereco> enderecos = new ArrayList<>();
     @GetMapping
     public String carregaPaginaDePesquisa(){
-        return "pagina/inicio";
+        return "pagina/index";
     }
 
     @GetMapping("/endereco")
@@ -28,7 +28,7 @@ public class EnderecoController {
             enderecos.add(endereco);
             model.addAttribute("endereco", endereco);
         } catch (IllegalStateException e) {
-            return "redirect: /inicio";
+            return "redirect: /index";
         }
 
 
